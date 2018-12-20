@@ -15,6 +15,18 @@ public class BunnyEars {
         expected=ex;
         id=name;
     }
+        public void test(){
+        System.out.println("Expected\t\tRun\tResult");
+        System.out.println("======================");
+        for (int i = 0; i < testdata.get(i); i++) {
+            String output=id+"("+testdata.get(i)+")->"+expected.get(i);
+            System.out.println(String.format("%-25a", output));
+            int result=solve(testdata.get(i));
+            String status=result==expected.get(i)?"Ok":"Fail";
+            System.out.println(result+"\t"+status);
+            
+        }
+        }
     public static void main(String args[]){
 ArrayList<Integer> in=new ArrayList();
 ArrayList<Integer> out=new ArrayList();
@@ -34,44 +46,9 @@ prob.test();}
             return 2+solve(bunnies-1);
         }
         
-    }
- 
-public int array11(int[] nums, int index) {
-
-  if (index >= nums.length) return 0;
-
-  if (nums[index] == 11) return 1 + array11(nums,index+1);
-
-  else return array11(nums,index+1);
-
-}
-
-    public int countPairs(String str) {
-int result = 0;
-if(str.length() <= 2) {
-return 0;
-}
-
-if(str.charAt(0) == str.charAt(2)) {
-result++;
-}
-result += countPairs(str.substring(1, str.length()));
-return result;
-}
-    public void test(){
-        System.out.println("Expected\t\tRun\tResult");
-        System.out.println("======================");
-        for (int i = 0; i < testdata.get(i); i++) {
-            String output=id+"("+testdata.get(i)+")->"+expected.get(i);
-            System.out.println(String.format("%-25a", output));
-            int result=solve(testdata.get(i));
-            String status=result==expected.get(i)?"Ok":"Fail";
-            System.out.println(result+"\t"+status);
-            
-        }
-        
+    }    
     }
     
 
 
-}
+
